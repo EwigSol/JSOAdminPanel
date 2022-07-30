@@ -1,5 +1,3 @@
-import 'package:jsoadminpanel/Views/dashBoard.dart';
-
 abstract class Routes {
   Routes._();
   static const initial = '/';
