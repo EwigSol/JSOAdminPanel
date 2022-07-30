@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:jsoadminpanel/Views/home.dart';
+import 'package:jsoadminpanel/Views/Home.dart';
+import 'package:jsoadminpanel/Views/LoginView.dart';
 
 import 'Configs/firebase_options.dart';
 
@@ -18,10 +19,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Login(),
     );
   }
 }
