@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jsoadminpanel/Configs/Bindings/authCheckBinding.dart';
 import 'package:jsoadminpanel/Constants/theme.dart';
+import 'package:jsoadminpanel/Controllers/authControllers.dart';
 import 'package:jsoadminpanel/Services/routerService.dart';
 import 'package:url_strategy/url_strategy.dart';
 import 'Configs/firebase_options.dart';
