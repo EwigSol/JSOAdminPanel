@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:jsoadminpanel/Constants/globalVariables.dart';
 
@@ -69,9 +71,9 @@ class Database {
         .snapshots()
         .map((QuerySnapshot querySnapshot) {
       List<UserModel> retVal = [];
-      querySnapshot.docs.forEach((element) {
+      for (var element in querySnapshot.docs) {
         retVal.add(UserModel.fromFirestore(element));
-      });
+      }
       return retVal;
     });
   }

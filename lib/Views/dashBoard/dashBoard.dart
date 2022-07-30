@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:jsoadminpanel/Constants/theme.dart';
 
@@ -10,7 +12,7 @@ class DashBoard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('DashBoard'),
+        title: const Text('DashBoard'),
       ),
       body: Center(
         child: Column(

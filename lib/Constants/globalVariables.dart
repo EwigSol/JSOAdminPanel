@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:get/get.dart';
 
 Rxn<bool> isSigned = Rxn<bool>();

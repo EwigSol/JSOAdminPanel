@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:jsoadminpanel/Controllers/userController.dart';
@@ -18,11 +20,11 @@ class AuthController extends GetxController {
 
   Future<void> createUser(String name, String email, String password) async {
     try {
-      UserCredential _authResult = await auth.createUserWithEmailAndPassword(
+      UserCredential authResult = await auth.createUserWithEmailAndPassword(
           email: email.trim(), password: password);
 
-      UserModel _userModel = UserModel(
-        id: _authResult.user!.uid,
+      UserModel userModel = UserModel(
+        id: authResult.user!.uid,
         name: name,
         email: email,
         description: 'I am Taplo user',
@@ -30,7 +32,7 @@ class AuthController extends GetxController {
         isAdmin: true,
         tag: true,
       );
-      await Database().createUser(_userModel);
+      await Database().createUser(userModel);
       Get.back();
       Get.snackbar(
         "SignedUp",
@@ -46,7 +48,7 @@ class AuthController extends GetxController {
 
   Future<void> logIn(String email, String password) async {
     try {
-      UserCredential _authResult = await auth.signInWithEmailAndPassword(
+      UserCredential authResult = await auth.signInWithEmailAndPassword(
           email: email, password: password);
       // isSigned.value = true;
       // userID.value = _authResult.user!.uid;
