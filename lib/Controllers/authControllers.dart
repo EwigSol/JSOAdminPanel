@@ -2,6 +2,9 @@
 
 import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:jsoadminpanel/Configs/routes.dart';
+import 'package:jsoadminpanel/Constants/globalVariables.dart';
+import 'package:jsoadminpanel/Constants/theme.dart';
 import 'package:jsoadminpanel/Controllers/userController.dart';
 import 'package:jsoadminpanel/Models/userModel.dart';
 import 'package:jsoadminpanel/Services/dataBaseService.dart';
@@ -50,21 +53,20 @@ class AuthController extends GetxController {
     try {
       UserCredential authResult = await auth.signInWithEmailAndPassword(
           email: email, password: password);
-      // isSigned.value = true;
-      // userID.value = _authResult.user!.uid;
+      isSigned.value = true;
+      userID.value = authResult.user!.uid;
       Get.put(UserController()).onInit();
 
-      // Get.offAll(
-      //   () => HomeView(),
-      // );
-      // Get.snackbar(
-      //   "SignedIn",
-      //   "Signedin Successfully",
-      //   snackPosition: SnackPosition.BOTTOM,
-      // );
+      Get.offNamed(Routes.dashBoard);
+      Get.snackbar(
+        "SignedIn",
+        "Signedin Successfully",
+        snackPosition: SnackPosition.BOTTOM,
+      );
     } catch (e) {
-      // Get.snackbar("Error in Signing In", e.toString(),
-      //     snackPosition: SnackPosition.BOTTOM, backgroundColor: kRedColor);
+      Get.snackbar("Error in Signing In", e.toString(),
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: AppTheme.errorColor);
     }
   }
 

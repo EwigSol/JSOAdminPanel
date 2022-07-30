@@ -30,7 +30,7 @@ class LoadingScreen extends StatelessWidget {
                 ),
               );
             } else {
-              return isSigned.value! ? const DashBoard() : const AuthView();
+              return isSigned.value! ? const DashBoard() : AuthView();
             }
           },
         ),

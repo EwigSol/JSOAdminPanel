@@ -23,7 +23,7 @@ class AppRoutes {
     ),
     GetPage(
       name: Routes.login,
-      page: () => const AuthView(),
+      page: () => AuthView(),
       transition: Transition.fadeIn,
     ),
   ];

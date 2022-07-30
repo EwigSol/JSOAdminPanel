@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:jsoadminpanel/Views/LoginView.dart';
 import 'package:jsoadminpanel/Views/TextField.dart';
-
-import 'SocialIconWidget.dart';
+import 'package:jsoadminpanel/Views/auth/auth.dart';
 
 class SignUp extends StatelessWidget {
   SignUp({Key? key}) : super(key: key);
@@ -39,7 +36,7 @@ class SignUp extends StatelessWidget {
                         fontSize: 52.0,
                         fontWeight: FontWeight.normal),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Padding(
@@ -51,7 +48,9 @@ class SignUp extends StatelessWidget {
                           controller: emailController,
                           leadingIcon: Icons.mail,
                           lable: 'ای میل انٹر کریں',
-                          trailing: isObsecure.value ? SizedBox() : SizedBox(),
+                          trailing: isObsecure.value
+                              ? const SizedBox()
+                              : const SizedBox(),
                         ),
                         const SizedBox(
                           height: 15,
@@ -106,8 +105,6 @@ class SignUp extends StatelessWidget {
                                 //       snackPosition: SnackPosition.BOTTOM,
                                 //       backgroundColor: kRedColor);
                               },
-                              // isLoading.value = false;
-                              // },
                               child: const Text(
                                 'نیا اکاؤنٹ بنائیں',
                                 style: TextStyle(
@@ -118,13 +115,13 @@ class SignUp extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             GestureDetector(
                               onTap: () {
-                                Get.to(() => Login());
+                                Get.to(() => AuthView());
                               },
                               child: const Text(
                                 "لاگ ان کریں.",
@@ -169,20 +166,6 @@ class SignUp extends StatelessWidget {
                           ],
                         ),
                         const SizedBox(height: 20),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SocialIconLogin(
-                              image: 'assets/images/googleicon.svg',
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            SocialIconLogin(
-                              image: 'assets/images/facebookicon.svg',
-                            ),
-                          ],
-                        ),
                       ],
                     ),
                   ),
