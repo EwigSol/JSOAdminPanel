@@ -2,7 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jsoadminpanel/Configs/Bindings/authCheckBinding.dart';
-import 'package:jsoadminpanel/Views/home.dart';
+import 'package:jsoadminpanel/Constants/theme.dart';
+import 'package:jsoadminpanel/Views/dashBoard.dart';
 
 import 'Configs/firebase_options.dart';
 
@@ -22,10 +23,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       initialBinding: AuthCheckBinding(),
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      home: const DashBoard(),
     );
   }
 }
