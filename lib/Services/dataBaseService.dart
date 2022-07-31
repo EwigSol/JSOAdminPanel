@@ -12,20 +12,13 @@ class Database {
 
   Future<bool> createUser(UserModel userModel) async {
     try {
-      await firestore
-          .collection("users")
-          .doc(userModel.id)
-          .collection('userDetials')
-          .doc('userDetials')
-          .set({
+      await firestore.collection("admin").doc(userModel.id).set({
         "id": userModel.id,
         "name": userModel.name,
         "email": userModel.email,
         "description": userModel.description,
-        "dynamicLink": userModel.dynamicLink,
         'imageUrl': userModel.imageUrl,
         'isAdmin': userModel.isAdmin,
-        'tag': userModel.tag,
       });
       return true;
     } catch (e) {

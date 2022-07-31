@@ -149,6 +149,14 @@ class AuthView extends StatelessWidget {
                       ],
                     ),
                   ),
+                  InkWell(
+                    onTap: () => Get.toNamed('/signUp'),
+                    child: const Text('SignUp',
+                        style: TextStyle(
+                            color: COLOR_THEME_PRIMARY,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold)),
+                  ),
                   const Messages(
                     msg: "Login Successful",
                     type: "success",

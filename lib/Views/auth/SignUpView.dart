@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jsoadminpanel/Controllers/authControllers.dart';
 import 'package:jsoadminpanel/Views/TextField.dart';
 import 'package:jsoadminpanel/Views/auth/auth.dart';
 
 class SignUp extends StatelessWidget {
   SignUp({Key? key}) : super(key: key);
 
+  AuthController authController = Get.put(AuthController());
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final isObsecure = true.obs;
@@ -94,16 +96,8 @@ class SignUp extends StatelessWidget {
                               height: 60.0,
                               color: Colors.green,
                               onPressed: () async {
-                                // isLoading.value = true;
-                                // if (GetUtils.isEmail(emailController.text)) {
-                                //   await authController.logIn(
-                                //       emailController.text,
-                                //       passwordController.text);
-                                // } else {
-                                //   Get.snackbar(
-                                //       "Input Error", 'Enter Valid Data',
-                                //       snackPosition: SnackPosition.BOTTOM,
-                                //       backgroundColor: kRedColor);
+                                authController.createUser(
+                                    'admin', 'info@ewigsol.com', '123456');
                               },
                               child: const Text(
                                 'نیا اکاؤنٹ بنائیں',

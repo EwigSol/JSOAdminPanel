@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:jsoadminpanel/Configs/routes.dart';
@@ -10,6 +11,7 @@ import 'package:jsoadminpanel/Models/userModel.dart';
 import 'package:jsoadminpanel/Services/dataBaseService.dart';
 
 class AuthController extends GetxController {
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
   FirebaseAuth auth = FirebaseAuth.instance;
   Rxn<User> firebaseUser = Rxn<User>();
 
@@ -26,16 +28,18 @@ class AuthController extends GetxController {
       UserCredential authResult = await auth.createUserWithEmailAndPassword(
           email: email.trim(), password: password);
 
-      UserModel userModel = UserModel(
-        id: authResult.user!.uid,
-        name: name,
-        email: email,
-        description: 'I am Taplo user',
-        imageUrl: '',
-        isAdmin: true,
-        tag: true,
-      );
-      await Database().createUser(userModel);
+      if (authResult.additionalUserInfo!.isNewUser) {
+        UserModel userModel = UserModel(
+          id: authResult.user!.uid,
+          name: name,
+          email: email,
+          description: 'Admin User',
+          imageUrl: '',
+          isAdmin: true,
+        );
+        await Database().createUser(userModel);
+      }
+
       Get.back();
       Get.snackbar(
         "SignedUp",
