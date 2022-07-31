@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//TODO: don't user capital letters in contant names
 // theme color settings
 const Color COLOR_THEME_PRIMARY = Color(0xFFFFA010);
 const Color COLOR_THEME_SECONDARY = Color(0xFF263571);

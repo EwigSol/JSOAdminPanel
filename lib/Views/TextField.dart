@@ -1,9 +1,10 @@
+// ignore_for_file:  file_names
+
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
 import 'package:jsoadminpanel/Configs/theme_settings.dart';
 
 class TextFieldWidget extends StatelessWidget {
-  TextFieldWidget({
+  const TextFieldWidget({
     Key? key,
     required this.lable,
     required this.controller,
@@ -23,7 +24,7 @@ class TextFieldWidget extends StatelessWidget {
     return Container(
       height: 60,
       alignment: Alignment.center,
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
       width: double.infinity,
       decoration: BoxDecoration(
         color: COLOR_LIGHT_COLOR,
@@ -34,7 +35,7 @@ class TextFieldWidget extends StatelessWidget {
         obscureText: obsecure,
         controller: controller,
         cursorColor: COLOR_THEME_PRIMARY,
-        style: TextStyle(
+        style: const TextStyle(
           color: INPUT_THEME_TXT_COLOR,
           fontSize: 24,
         ),
@@ -47,7 +48,7 @@ class TextFieldWidget extends StatelessWidget {
               color: COLOR_THEME_PRIMARY,
             ),
             hintText: lable,
-            hintStyle: TextStyle(
+            hintStyle: const TextStyle(
               color: INPUT_THEME_PLACEHOLDER_COLOR,
               fontSize: 24,
             ),
