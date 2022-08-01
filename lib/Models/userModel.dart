@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class UserModel {
@@ -8,7 +10,6 @@ class UserModel {
   String? dynamicLink;
   String? imageUrl;
   bool? isAdmin;
-  bool? tag;
 
   UserModel({
     this.id,
@@ -18,7 +19,6 @@ class UserModel {
     this.dynamicLink,
     this.imageUrl,
     this.isAdmin,
-    this.tag,
   });
 
   UserModel.fromFirestore(DocumentSnapshot doc) {
@@ -29,6 +29,5 @@ class UserModel {
     dynamicLink = doc['dynamicLink'];
     imageUrl = doc['imageUrl'];
     isAdmin = doc['isAdmin'];
-    tag = doc['tag'];
   }
 }

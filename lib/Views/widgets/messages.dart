@@ -22,7 +22,7 @@ class Messages extends StatelessWidget {
               ? ERROR_MESSAGE_BG_COLOR
               : SUCCESS_MESSAGE_BG_COLOR,
           borderRadius: BorderRadius.circular(10),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
                 color: Colors.black26, blurRadius: 7, offset: Offset(2, 2))
           ],

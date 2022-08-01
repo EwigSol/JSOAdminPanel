@@ -1,7 +1,7 @@
 abstract class Routes {
   Routes._();
   static const initial = '/';
-  static const dashBoard = '/home';
+  static const dashBoard = '/dashboard';
   static const login = '/login';
-  static const signUp = '/signUp';
+  static const createCategory = '/createCategory';
 }

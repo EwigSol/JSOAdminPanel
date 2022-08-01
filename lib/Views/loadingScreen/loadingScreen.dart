@@ -22,7 +22,6 @@ class LoadingScreen extends StatelessWidget {
         backgroundColor: AppTheme.lightTheme.backgroundColor,
         body: Obx(
           () {
-            //TODO: double check this logic
             if (isSigned.value == null) {
               return Center(
                 child: CircularProgressIndicator(

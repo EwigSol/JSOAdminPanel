@@ -18,6 +18,7 @@ class AppTheme {
   static const Color onBackgroundColor = Color(0xFF212121);
   static const Color onErrorColor = Color(0xFF212121);
   static const Color iconColor = Color(0xFFFFFFFF);
+  static const Color snakBarBackgroundColor = Color(0x00000000);
 
   //dark theme colors
   static const Color darkPrimaryColor = Color(0xFFFFFFFF);
