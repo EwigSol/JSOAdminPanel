@@ -1,8 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:jsoadminpanel/Configs/Bindings/authCheckBinding.dart';
+import 'package:jsoadminpanel/Controllers/Bindings/authCheckBinding.dart';
 import 'package:jsoadminpanel/Controllers/authControllers.dart';
+import 'package:jsoadminpanel/Controllers/sidebarController.dart';
 import 'package:jsoadminpanel/Services/routerService.dart';
 import 'package:jsoadminpanel/utils/Constants/theme.dart';
 import 'package:url_strategy/url_strategy.dart';
@@ -14,6 +15,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   Get.put(AuthController());
+  Get.put(SideBarController());
   setPathUrlStrategy();
   runApp(const MyApp());
 }

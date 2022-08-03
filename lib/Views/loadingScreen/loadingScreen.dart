@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jsoadminpanel/Views/auth/auth.dart';
-import 'package:jsoadminpanel/Views/dashBoard/dashBoard.dart';
+import 'package:jsoadminpanel/Views/rootView.dart/root.dart';
 import 'package:jsoadminpanel/utils/Constants/globalVariables.dart';
 import 'package:jsoadminpanel/utils/Constants/theme.dart';
 
@@ -29,7 +29,7 @@ class LoadingScreen extends StatelessWidget {
                 ),
               );
             } else {
-              return isSigned.value! ? DashBoard() : AuthView();
+              return isSigned.value! ? RootView() : AuthView();
             }
           },
         ),
