@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jsoadminpanel/Controllers/sidebarController.dart';
+import 'package:jsoadminpanel/Views/category/createCategory.dart';
 import 'package:jsoadminpanel/Views/dashBoard/dashBoard.dart';
-import 'package:jsoadminpanel/utils/Constants/theme.dart';
 import 'package:jsoadminpanel/utils/sideBar/sidebar/desktop_sidebar.dart';
 import 'package:jsoadminpanel/utils/sideBar/sidebar/mobile_sidebar.dart';
 import 'package:jsoadminpanel/utils/sideBar/sidebar/tablet_desktop.dart';
@@ -20,20 +20,20 @@ class RootView extends StatelessWidget {
       drawer: size < 500
           ? MobileSidebar(sideBarController: _sideBarController)
           : null,
-      appBar: AppBar(
-        backgroundColor: AppTheme.primaryColor,
-        elevation: 0,
-        iconTheme: const IconThemeData(color: AppTheme.primaryColor),
-        automaticallyImplyLeading: size < 500 ? true : false,
-        actions: [
-          Row(
-            children: const [
-              Icon(Icons.logout, size: 20, color: AppTheme.primaryColor),
-              Text("Logout", style: TextStyle(color: AppTheme.primaryColor)),
-            ],
-          ),
-        ],
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: AppTheme.primaryColor,
+      //   elevation: 0,
+      //   iconTheme: const IconThemeData(color: AppTheme.primaryColor),
+      //   automaticallyImplyLeading: size < 500 ? true : false,
+      //   actions: [
+      //     Row(
+      //       children: const [
+      //         Icon(Icons.logout, size: 20, color: AppTheme.primaryColor),
+      //         Text("Logout", style: TextStyle(color: AppTheme.primaryColor)),
+      //       ],
+      //     ),
+      //   ],
+      // ),
       body: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -60,6 +60,7 @@ class RootView extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               children: [
                 DashBoard(),
+                const CreateCategory(),
               ],
             ),
           ),

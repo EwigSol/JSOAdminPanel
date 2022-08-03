@@ -5,29 +5,11 @@ import 'package:jsoadminpanel/utils/Constants/menuIcons.dart';
 class SideBarController extends GetxController {
   final List<IconData> iconsList = [
     AssetImages.dashboard,
-    // AssetImages.banner,
-    // AssetImages.folder,
-    // AssetImages.menuDoc,
-    // AssetImages.menuProfile,
-    // AssetImages.folder,
-    // AssetImages.media,
-    // AssetImages.menuStore,
-    // AssetImages.menuTask,
-    // AssetImages.menuStore,
-    // AssetImages.menuSetting
+    AssetImages.createCategory,
   ];
   final List<String> namesList = [
     'Dashboard',
-    'Add-banner',
     'Categories',
-    'Products',
-    'Users',
-    'Footer',
-    'Reservations',
-    'Orders',
-    'Invoice Orders',
-    'Shopify Order Tab',
-    'Settings'
   ];
 
   final _pageController = PageController().obs;

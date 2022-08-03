@@ -9,4 +9,5 @@ class AssetImages {
   // icons
   static const IconData document = Icons.dashboard;
   static const IconData dashboard = Icons.dashboard;
+  static const IconData createCategory = Icons.category;
 }
