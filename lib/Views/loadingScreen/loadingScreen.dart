@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:jsoadminpanel/Constants/globalVariables.dart';
-import 'package:jsoadminpanel/Constants/theme.dart';
 import 'package:jsoadminpanel/Views/auth/auth.dart';
 import 'package:jsoadminpanel/Views/dashBoard/dashBoard.dart';
+import 'package:jsoadminpanel/utils/Constants/globalVariables.dart';
+import 'package:jsoadminpanel/utils/Constants/theme.dart';
 
 class LoadingScreen extends StatelessWidget {
   LoadingScreen({Key? key}) : super(key: key);
@@ -29,7 +29,7 @@ class LoadingScreen extends StatelessWidget {
                 ),
               );
             } else {
-              return isSigned.value! ? const DashBoard() : AuthView();
+              return isSigned.value! ? DashBoard() : AuthView();
             }
           },
         ),

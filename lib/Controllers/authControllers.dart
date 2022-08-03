@@ -4,10 +4,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:jsoadminpanel/Configs/routes.dart';
-import 'package:jsoadminpanel/Constants/globalVariables.dart';
 import 'package:jsoadminpanel/Controllers/userController.dart';
 import 'package:jsoadminpanel/Models/userModel.dart';
 import 'package:jsoadminpanel/Services/dataBaseService.dart';
+import 'package:jsoadminpanel/utils/Constants/globalVariables.dart';
 
 class AuthController extends GetxController {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
@@ -57,6 +57,7 @@ class AuthController extends GetxController {
       UserCredential authResult = await auth.signInWithEmailAndPassword(
           email: email, password: password);
       isSigned.value = true;
+      print(isSigned.value);
       userID.value = authResult.user!.uid;
       Get.put(UserController()).onInit();
       if (userModel.isAdmin == true) {

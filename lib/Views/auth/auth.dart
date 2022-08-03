@@ -1,10 +1,10 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:jsoadminpanel/Constants/theme.dart';
 import 'package:jsoadminpanel/Controllers/authControllers.dart';
 import 'package:jsoadminpanel/Models/userModel.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jsoadminpanel/utils/Constants/theme.dart';
 import 'widgets/loginForm.dart';
 
 class AuthView extends StatelessWidget {

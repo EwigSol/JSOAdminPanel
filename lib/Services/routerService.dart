@@ -19,7 +19,7 @@ class AppRoutes {
     ),
     GetPage(
       name: Routes.dashBoard,
-      page: () => const DashBoard(),
+      page: () => DashBoard(),
       transition: Transition.fadeIn,
     ),
     GetPage(
