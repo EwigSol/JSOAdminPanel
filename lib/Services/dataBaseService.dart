@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:jsoadminpanel/Constants/globalVariables.dart';
+import 'package:jsoadminpanel/utils/Constants/globalVariables.dart';
 
 import '../Models/userModel.dart';
 

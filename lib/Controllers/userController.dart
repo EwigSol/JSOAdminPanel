@@ -1,9 +1,10 @@
 // ignore_for_file: file_names, avoid_print
 
 import 'package:get/get.dart';
-import 'package:jsoadminpanel/Constants/globalVariables.dart';
+
 import 'package:jsoadminpanel/Models/userModel.dart';
 import 'package:jsoadminpanel/Services/dataBaseService.dart';
+import 'package:jsoadminpanel/utils/Constants/globalVariables.dart';
 
 class UserController extends GetxController {
   Rxn<List<UserModel>> userModel = Rxn<List<UserModel>>();
