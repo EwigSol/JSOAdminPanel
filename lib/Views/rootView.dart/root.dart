@@ -17,12 +17,12 @@ class RootView extends StatelessWidget {
     final size = MediaQuery.of(context).size.width;
     return Scaffold(
       key: _sideBarController.scaffoldKey,
-      appBar: size < 600
+      appBar: size < 500
           ? AppBar(
               title: const Text('JSO Admin Panel'),
             )
           : null,
-      drawer: size < 600
+      drawer: size < 500
           ? MobileSidebar(sideBarController: _sideBarController)
           : null,
       body: Row(
