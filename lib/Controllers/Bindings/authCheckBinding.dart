@@ -1,8 +1,10 @@
 // ignore_for_file: file_names, avoid_print
 import 'package:get/get.dart';
-import 'package:jsoadminpanel/Constants/globalVariables.dart';
 import 'package:jsoadminpanel/Controllers/authControllers.dart';
+import 'package:jsoadminpanel/Controllers/sidebarController.dart';
+
 import 'package:jsoadminpanel/Controllers/userController.dart';
+import 'package:jsoadminpanel/utils/Constants/globalVariables.dart';
 
 class AuthCheckBinding implements Bindings {
   @override
@@ -17,5 +19,6 @@ class AuthCheckBinding implements Bindings {
       isSigned.value = false;
       print('User not Found*******************');
     }
+    Get.lazyPut<SideBarController>(() => SideBarController());
   }
 }

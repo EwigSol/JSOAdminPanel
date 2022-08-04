@@ -3,9 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jsoadminpanel/Configs/theme_settings.dart';
-import 'package:jsoadminpanel/Constants/constants.dart';
 import 'package:jsoadminpanel/Controllers/authControllers.dart';
 import 'package:jsoadminpanel/Models/userModel.dart';
+import 'package:jsoadminpanel/utils/Constants/constants.dart';
 import 'package:jsoadminpanel/views/TextField.dart';
 
 class LoginForm extends StatelessWidget {
