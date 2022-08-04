@@ -17,23 +17,14 @@ class RootView extends StatelessWidget {
     final size = MediaQuery.of(context).size.width;
     return Scaffold(
       key: _sideBarController.scaffoldKey,
-      drawer: size < 500
+      appBar: size < 600
+          ? AppBar(
+              title: const Text('JSO Admin Panel'),
+            )
+          : null,
+      drawer: size < 600
           ? MobileSidebar(sideBarController: _sideBarController)
           : null,
-      // appBar: AppBar(
-      //   backgroundColor: AppTheme.primaryColor,
-      //   elevation: 0,
-      //   iconTheme: const IconThemeData(color: AppTheme.primaryColor),
-      //   automaticallyImplyLeading: size < 500 ? true : false,
-      //   actions: [
-      //     Row(
-      //       children: const [
-      //         Icon(Icons.logout, size: 20, color: AppTheme.primaryColor),
-      //         Text("Logout", style: TextStyle(color: AppTheme.primaryColor)),
-      //       ],
-      //     ),
-      //   ],
-      // ),
       body: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -47,7 +38,9 @@ class RootView extends StatelessWidget {
                 ? DesktopSidebar(sideBarController: _sideBarController)
                 : size > 600
                     ? TabletSidebar(sideBarController: _sideBarController)
-                    : null,
+                    : size < 600
+                        ? MobileSidebar(sideBarController: _sideBarController)
+                        : null,
           ),
           SizedBox(
             width: size > 920
@@ -58,9 +51,9 @@ class RootView extends StatelessWidget {
             child: PageView(
               controller: _sideBarController.pageController,
               physics: const NeverScrollableScrollPhysics(),
-              children: [
+              children: const [
                 DashBoard(),
-                const CreateCategory(),
+                CreateCategory(),
               ],
             ),
           ),
